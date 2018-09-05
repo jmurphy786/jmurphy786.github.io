@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta CHARSET = "ISO-8859-1">
+		<link href="css/style.css"
+		rel="stylesheet"
+		type = "text/css"/>
+		<style>
+		
+		body {background-color: black; color: white;}
+		</style>
+	</head>	
+<body>
+<p> Before the scripts... </p>
+
+	<script>
+		var person1 = {
+		name : "Steven",
+		occupation : "Consultant",
+		age : 21
+		};
+		function getSquare(x1){
+		return x1 * x1;
+		}
+		var output = "" + person1.name + person1.occupation + person1.age;
+		window.alert(output);
+		document.write(output);
+	</script>
+<p> ... After the script... </p>
+
+
+<div>
+	<input type="number"
+		id = "Num1"
+		placeholder = "Username..."
+		alt = "Enter Username"
+		required = "required"/>
+	<input type="number"
+		id = "Num2"
+		placeholder = "RealName..."
+		alt = "Enter RealName"
+		required = "required"/>
+</div>
+
+
+
+
+<div>
+<button onclick="Addition()">+</button>
+<button onclick="Subtraction()">/</button>
+<button onclick="Division()">/</button>
+<button onclick="Multiply()">*</button>
+<button onclick="Fizzbuzz()">f</button>
+</div>
+
+
+
+<div>
+	<input type="number"
+		id = "GetValOne"
+		placeholder = "valu1..."
+		alt = "Enter Value1"
+		required = "required"/>
+	<input type="number"
+		id = "GetValTwo"
+		placeholder = "RealName..."
+		alt = "Enter Value2"
+		required = "required"/>
+</div>
+
+<div>
+<button onclick="getOne()">get1</button>
+</div>
+
+	<script>
+	function Addition(){
+      var getnum1 = window.document.getElementById("Num1").value;
+	  var realnum1 = parseInt(getnum1);
+      var getnum2 = window.document.getElementById("Num2").value;
+	  var realnum2 = parseInt(getnum2);
+
+      document.getElementById("Output").value = realnum1+realnum2
+	  
+	  if(isNaN(realnum1) & isNaN(realnum2)){
+	  	  	window.alert("Not a number!");
+			document.getElementById("Num1").focus();
+			document.getElementById("Num1").select();
+			
+	  }
+	  if(isNaN(document.getElementById("Output").value)){
+	  		window.alert("Not a number!");
+			}
+			if(isNaN(realnum1)){
+			document.getElementById("Num1").focus();
+			document.getElementById("Num1").select();
+			}
+			else{
+			document.getElementById("Num2").focus();
+			document.getElementById("Num2").select();
+			}
+
+
+	  } 
+   
+  	function Subtraction(){
+      var getnum1 = window.document.getElementById("Num1").value;
+	  var realnum1 = parseInt(getnum1);
+      var getnum2 = window.document.getElementById("Num2").value;
+	  var realnum2 = parseInt(getnum2);
+      document.getElementById("Output").value = realnum1-realnum2;
+  }
+  	function Division(){
+      var getnum1 = window.document.getElementById("Num1").value;
+	  var realnum1 = parseInt(getnum1);
+      var getnum2 = window.document.getElementById("Num2").value;
+	  var realnum2 = parseInt(getnum2);
+      document.getElementById("Output").value = realnum1/realnum2;
+  }
+  	function Multiply(){
+      var getnum1 = window.document.getElementById("Num1").value;
+	  var realnum1 = parseInt(getnum1);
+      var getnum2 = window.document.getElementById("Num2").value;
+	  var realnum2 = parseInt(getnum2);
+      document.getElementById("Output").value = realnum1*realnum2;
+  }
+  
+  function Fizzbuzz(){
+	for (var i = 1 ; i <= 100; i++){
+		if(i % 3 == 0){
+		console.log("fizz");}
+		else if(i % 5 == 0){
+		console.log("buzz");}
+		else if(i%3== 0 && i%5==0){
+		console.log("fizzbuzz");}
+		else{
+		console.log(" ");}
+	}
+  }
+
+  function getOne(){
+  
+	var getval = window.document.getElementById("GetValOne").value;
+	
+	while(getval > 1){
+		if(getval % 3 == 0){
+			getval = getval/3
+			console.log(getval);
+		}
+		else{
+			getval = getval + 1;
+			console.log(getval);
+		}
+	}
+	document.getElementById("GetValTwo").value = getval;
+  }  
+	</script>
+	
+<div>
+	<input type="output"
+		id = "Output"
+		placeholder = "Output..."
+	/>
+</div>
+
+</body>
+</html>

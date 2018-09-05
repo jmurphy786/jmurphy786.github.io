@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta CHARSET = "ISO-8859-1">
+		<link href="css/style.css"
+		rel="stylesheet"
+		type = "text/css"/>
+		<style>
+		html {
+		height: 100%;
+		}
+		body {background-color: white; color: black ;	min-height: 100%;}
+		</style>
+	</head>	
+	
+<body onmousemove = checkCords()>
+
+
+
+<p id="demo"></p>
+<input id="EnterWord" onmouseover = putToPara();>
+<script>
+
+	function putToPara(){
+	var str = window.document.getElementById("EnterWord").value;
+	document.getElementById("demo").innerHTML = str;
+	
+	}
+	function checkCords(){
+	var x_pos = event.clientX;
+	var thefont = 150;
+	var yes = true
+	var y_pos = event.clientY;
+	var d = document.getElementById("demo");
+	d.style.position = "absolute";	
+	d.style.left = x_pos + 'px';
+	d.style.top = y_pos + 'px';
+	if(event.altKey){
+	document.getElementById("demo").style.fontSize = document.getElementById("demo").style.fontSize + "600%";
+	}
+	else if(event.ctrlKey){
+	document.getElementById("demo").style.fontSize = document.getElementById("demo").style.fontSize + "60%";
+	}
+
+	}
+	
+
+</script>
+</body>
+</html>

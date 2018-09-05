@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta CHARSET = "ISO-8859-1">
+		<link href="css/style.css"
+		rel="stylesheet"
+		type = "text/css"/>
+		<style>
+		
+		body {background-color: black; color: white;}
+		</style>
+	</head>	
+<body>
+<p> Before the scripts... </p>
+
+	<script>
+		var person1 = {
+		name : "Steven",
+		occupation : "Consultant",
+		age : 21
+		};
+		function getSquare(x1){
+		return x1 * x1;
+		}
+		var output = "" + person1.name + person1.occupation + person1.age;
+		window.alert(output);
+		document.write(output);
+	</script>
+<p> ... After the script... </p>
+
+
+<div>
+	<input type="input"
+		id = "Username"
+		placeholder = "Username..."
+		alt = "Enter Username"
+		required = "required"/>
+	<input type="input"
+		id = "RealName"
+		placeholder = "RealName..."
+		alt = "Enter RealName"
+		required = "required"/>
+</div>
+
+
+
+
+
+<button onclick="submit()">Submit</button>
+
+	<script>
+		
+	function submit(){
+      var userPass = window.document.getElementById("Username").value;
+      var userName = window.document.getElementById("RealName").value;
+      document.getElementById("Output").value = userPass + " " + userName;
+  }
+		
+	</script>
+	
+<div>
+	<input type="output"
+		id = "Output"
+		placeholder = "Output..."
+	/>
+</div>
+
+</body>
+</html>
