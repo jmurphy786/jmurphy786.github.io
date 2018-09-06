@@ -7,63 +7,113 @@
 		type = "text/css"/>
 		<style>
 		
-		body {background-color: black; color: white;}
+	body {background-color: black; color: #f35626;    line-height: 100%;
+    -webkit-background-clip: text;
+    -webkit-animation: hue 5s infinite linear;
+    font-family: Euclid Fraktur;     border-style: dashed;
+    border-width: 5px; }
+<span style="cursor:crosshair">crosshair</span><br>
+	@-webkit-keyframes hue {
+    from {
+      -webkit-filter: hue-rotate(0deg);
+    }
+    
+    to {
+      -webkit-filter: hue-rotate(360deg);
+    }
+}
+	.castle{   line-height: 5%; font-size:20px; font-family: Arial;}
+    .header {
+    text-align: center; /* center the text */
+    background: black; /* green background */
+    color: white; /* white text color */
+	}
+
 		</style>
 	</head>	
-<body>
-<p> Before the scripts... </p>
+<body onmousemove = checkCords()>
 
-	<script>
-		var person1 = {
-		name : "Steven",
-		occupation : "Consultant",
-		age : 21
-		};
-		function getSquare(x1){
-		return x1 * x1;
-		}
-		var output = "" + person1.name + person1.occupation + person1.age;
-		window.alert(output);
-		document.write(output);
-	</script>
-<p> ... After the script... </p>
+<p><br/></p>
 
+<h1>J-Quest!</h1>
 
+<h4><br/></h4>
 <div>
-	<input type="input"
-		id = "Username"
-		placeholder = "Username..."
-		alt = "Enter Username"
-		required = "required"/>
-	<input type="input"
-		id = "RealName"
-		placeholder = "RealName..."
-		alt = "Enter RealName"
-		required = "required"/>
+	<button class="signUpClass" onclick="signUp()">SignUp</button>
 </div>
+<div>
+	<button class="signInClass" onclick="signIn()">SignIn</button>
+</div>
+<div>
+<div class="castle">
+<pre>                                                                         																			 </pre>
+<pre>                              .-"    `-.      ,                               																		</pre>
+<pre>                            .'          '.   /j\                              																			</pre>
+<pre>                           /              \,/:/#\                /\           																		</pre>
+<pre>                                         ,//' '/#\             //#\          														</pre>
+<pre>                          |             /' :   '/#\            /  /#\         																		</pre>
+<pre>                          :         ,  /' /'    '/#\__..--""""/    /#\__      																		</pre>
+<pre>                            \       /'\'-._:__    '/#\        ;      /#, """---																	</pre>
+<pre>                             `-.   / ;#\']" ; """--./#J       ':____...!      																		 </pre>
+<pre>                                `-/   /#\  J  [;[;[;Y]         |      ;       																			 </pre>
+<pre> """"""---....             __.--"/    '/#\ ;   " "  |     !    |   #! |        																			</pre>
+<pre>              ""--.. _.--""     /      ,/#\'-..____.;_,   |    |   '  |      																		  </pre>
+<pre>                    "-.        :_....___,/#} "####" | '_.-",   | #['  |        																		</pre>
+<pre>                       '-._      |[;[;[;[;|         |.;'  /;\  |      |        																		</pre>
+<pre>                       ,   `-.   |        :     _   .;'    /;\ |   #" |        																		</pre>
+<pre>                       !      `._:      _  ;   ##' .;'      /;\|  _,  |        																		</pre>
+<pre>                      .#\"""---..._    ';, |      .;{___     /;\  ]#' |__....--																	</pre>
+<pre>           .--.      ;'/#\         \    ]! |       "| , """--./_J    /         																	</pre>
+<pre>          /  '%;    /  '/#\         \   !' :        |!# #! #! #|    :`.__      																	</pre>
+<pre>         i__..'%] _:_   ;##J         \      :"#...._!   '  "  "|__  |    `--.._																	</pre>
+<pre>          | .--""" !|""""  |"""----...J     | '##"" `-._       |  """---.._   																			 </pre>
+<pre>      ____: |      #|      |         #|     |          "]      ;   ___...-"T,  																			</pre>
+<pre>     /   :  :      !|      |   _______!_    |           |__..--;"""     ,;MM; 																							 </pre>
+<pre>    :____| :    .-.#|      |  /\      /#\   |          /'               ''MM; 				         ,^.						  ,^.																				 </pre>
+<pre>     |""": |   /   \|   .----+  ;      /#\  :___..--"";                  ,'MM; 				         |||						  |||																		</pre>
+<pre>    _Y--:  |  ;     ;.-'      ;  \______/#: /         ;                  ''MM; 				         |||						  |||																	</pre>
+<pre>   /    |  | ;_______;     ____!  |"##"""MM!         ;                    ,'MM;				         |||  .-.[:|:].-.	                          |||  .-.[:|:].-.   																			</pre>
+<pre>  !_____|  |  |"#"#"|____.'""##"  |       :         ;                     ''MM  			         ===      | |  			                  ===      | |  														</pre>
+<pre>   | """"--!._|     |##""         !       !         :____.....-------"""""" |'				          E]=== |\--|-|''''| 				   E]=== |\--|-|''''| 																	</pre>
+<pre>   |          :     |______                        ___!_ "#""#""#"""#"""#"""|  			                  O  `'  '=[:]|''A'| 		                   O  `'  '=[:]|''A'| 												</pre>
+<pre> __|          ;     |MM"MM"""""---..._______...--""MM"MM]                   |  			               	         | P ||''''|  						| P ||''''|  																</pre>
+<pre>   "\-.      :      |#                                  :                   |                                          /   `.__.'             								 											</pre>
+<pre>     /#'.    |      /##,                                !                   |                                         [] /   \ \              														</pre>
+<pre>    .',/'\   |       #:#,                                ;       .==.       |                                         | \     / |                 												 </pre>
+<pre>   /"\'#"\',.|       ##;#,                               !     ,'||||',     |                                         | |     | |                   												</pre>
+<pre>         /;/`:       ######,          ____             _ :     M||||||M     |                                        <\\)     (///>                 													 </pre>
+<pre>        ###          /;"\.__"-._   """                   |===..M!!!!!!M_____| 																														 </pre>
+<pre>                            `--..`--.._____             _!_                    																														</pre>
+<pre>                                           `--...____,="_.'`-.____        fsc 																																		</pre></div>
+</div>
+<script>
 
-
-
-
-
-<button onclick="submit()">Submit</button>
-
-	<script>
 		
-	function submit(){
-      var userPass = window.document.getElementById("Username").value;
-      var userName = window.document.getElementById("RealName").value;
-      document.getElementById("Output").value = userPass + " " + userName;
-  }
-		
-	</script>
+
+  		
 	
-<div>
-	<input type="output"
-		id = "Output"
-		placeholder = "Output..."
-	/>
-</div>
+
+
+ 	                 
+		    
+
+		       
+ 	         
+		     
+
+</script>
+
+<p id="man">Hello!</p>
+
+<script>
+function checkCords(){
+	var x_pos = event.clientX;
+	var y_pos = event.clientY;
+	var d = document.getElementById("man");
+	d.style.left = x_pos + 'px';
+	d.style.top = y_pos + 'px';
+</script>
+
 
 </body>
 </html>
